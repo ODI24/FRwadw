@@ -1,0 +1,336 @@
+--[[
+    Credits:
+    ItzDan#6276
+    and the owner of the fly function(i dont know who it is sorry D:)
+]]
+
+if game:GetService("CoreGui"):FindFirstChild("sg") then
+	game:GetService("CoreGui"):FindFirstChild("sg"):Destroy()
+end
+
+-- Objects
+
+local sg = Instance.new("ScreenGui")
+local mf = Instance.new("Frame")
+local onoff = Instance.new("TextButton")
+local tb = Instance.new("Frame")
+local cred = Instance.new("TextLabel")
+local fcl = Instance.new("TextLabel")
+local fcs = Instance.new("Frame")
+local set1 = Instance.new("TextButton")
+local mat = Instance.new("TextBox")
+local trans = Instance.new("TextBox")
+local set2 = Instance.new("TextButton")
+local shape = Instance.new("TextBox")
+local set4 = Instance.new("TextButton")
+local set3 = Instance.new("TextButton")
+local color = Instance.new("TextBox")
+
+-- Properties
+
+sg.Name = "sg"
+sg.Parent = game:GetService("CoreGui")
+
+mf.Name = "mf"
+mf.Parent = sg
+mf.BackgroundColor3 = Color3.new(0.380392, 0.380392, 0.380392)
+mf.BorderSizePixel = 4
+mf.Position = UDim2.new(0.444791675, 0, 0.325242698, 0)
+mf.Size = UDim2.new(0, 212, 0, 287)
+mf.Active = true
+mf.Draggable = true
+
+onoff.Name = "onoff"
+onoff.Parent = mf
+onoff.BackgroundColor3 = Color3.new(0.235294, 0.67451, 0.376471)
+onoff.BorderSizePixel = 3
+onoff.Position = UDim2.new(0.491961509, 0, 0.108014047, 0)
+onoff.Size = UDim2.new(0, 107, 0, 35)
+onoff.Text = "On"
+onoff.TextColor3 = Color3.new(0, 0, 0)
+onoff.TextScaled = true
+onoff.TextSize = 14
+onoff.TextWrapped = true
+
+tb.Name = "tb"
+tb.Parent = mf
+tb.BackgroundColor3 = Color3.new(0.509804, 0.509804, 0.509804)
+tb.BorderSizePixel = 4
+tb.Position = UDim2.new(0, 0, -1.26536297e-05, 0)
+tb.Size = UDim2.new(0, 211, 0, 20)
+
+cred.Name = "cred"
+cred.Parent = tb
+cred.BackgroundColor3 = Color3.new(1, 1, 1)
+cred.BackgroundTransparency = 1
+cred.Position = UDim2.new(0.405463755, 0, -0.030339051, 0)
+cred.Size = UDim2.new(0, 40, 0, 20)
+cred.Text = "FreeCam By ItzDan#6276"
+cred.TextColor3 = Color3.new(0, 0, 0)
+cred.TextSize = 12
+
+fcl.Name = "fcl"
+fcl.Parent = mf
+fcl.BackgroundColor3 = Color3.new(0.286275, 0.576471, 0.862745)
+fcl.BorderSizePixel = 3
+fcl.Position = UDim2.new(0.001, 0,0.106, 0)
+fcl.Size = UDim2.new(0, 104,0, 35)
+fcl.Text = "FreeCam"
+fcl.TextColor3 = Color3.new(0, 0, 0)
+fcl.TextScaled = true
+fcl.TextSize = 14
+fcl.TextWrapped = true
+
+fcs.Name = "fcs"
+fcs.Parent = mf
+fcs.BackgroundColor3 = Color3.new(0.34902, 0.34902, 0.34902)
+fcs.BorderSizePixel = 2
+fcs.Position = UDim2.new(0.0438187718, 0, 0.281743705, 0)
+fcs.Size = UDim2.new(0, 192, 0, 195)
+
+set1.Name = "set1"
+set1.Parent = fcs
+set1.BackgroundColor3 = Color3.new(0.231373, 0.701961, 0.341176)
+set1.BorderSizePixel = 2
+set1.Position = UDim2.new(0.345312446, 0, -0.00213466538, 0)
+set1.Size = UDim2.new(0, 125, 0, 36)
+set1.Text = "Set"
+set1.TextColor3 = Color3.new(0, 0, 0)
+set1.TextScaled = true
+set1.TextSize = 14
+set1.TextWrapped = true
+
+mat.Name = "mat"
+mat.Parent = fcs
+mat.BackgroundColor3 = Color3.new(0.266667, 0.666667, 0.6)
+mat.BorderSizePixel = 2
+mat.Position = UDim2.new(0, 0, -0.00213468075, 0)
+mat.Size = UDim2.new(0, 66, 0, 36)
+mat.Text = "Neon"
+mat.TextColor3 = Color3.new(0, 0, 0)
+mat.TextScaled = true
+mat.TextSize = 14
+mat.TextWrapped = true
+
+trans.Name = "trans"
+trans.Parent = fcs
+trans.BackgroundColor3 = Color3.new(0.431373, 0.737255, 1)
+trans.BorderSizePixel = 2
+trans.Position = UDim2.new(0, 0, 0.274788409, 0)
+trans.Size = UDim2.new(0, 66, 0, 36)
+trans.Text = "0"
+trans.TextColor3 = Color3.new(0, 0, 0)
+trans.TextScaled = true
+trans.TextSize = 14
+trans.TextWrapped = true
+
+set2.Name = "set2"
+set2.Parent = fcs
+set2.BackgroundColor3 = Color3.new(0.231373, 0.701961, 0.341176)
+set2.BorderSizePixel = 2
+set2.Position = UDim2.new(0.345312446, 0, 0.274788409, 0)
+set2.Size = UDim2.new(0, 125, 0, 36)
+set2.Text = "Set"
+set2.TextColor3 = Color3.new(0, 0, 0)
+set2.TextScaled = true
+set2.TextSize = 14
+set2.TextWrapped = true
+
+shape.Name = "shape"
+shape.Parent = fcs
+shape.BackgroundColor3 = Color3.new(0.384314, 0.917647, 1)
+shape.BorderSizePixel = 2
+shape.Position = UDim2.new(0, 0, 0.813249946, 0)
+shape.Size = UDim2.new(0, 66, 0, 36)
+shape.Text = "Ball"
+shape.TextColor3 = Color3.new(0, 0, 0)
+shape.TextScaled = true
+shape.TextSize = 14
+shape.TextWrapped = true
+
+set4.Name = "set4"
+set4.Parent = fcs
+set4.BackgroundColor3 = Color3.new(0.231373, 0.701961, 0.341176)
+set4.BorderSizePixel = 2
+set4.Position = UDim2.new(0.345312446, 0, 0.813249946, 0)
+set4.Size = UDim2.new(0, 125, 0, 36)
+set4.Text = "Set"
+set4.TextColor3 = Color3.new(0, 0, 0)
+set4.TextScaled = true
+set4.TextSize = 14
+set4.TextWrapped = true
+
+set3.Name = "set3"
+set3.Parent = fcs
+set3.BackgroundColor3 = Color3.new(0.231373, 0.701961, 0.341176)
+set3.BorderSizePixel = 2
+set3.Position = UDim2.new(0.345312446, 0, 0.5517115, 0)
+set3.Size = UDim2.new(0, 125, 0, 36)
+set3.Text = "Set"
+set3.TextColor3 = Color3.new(0, 0, 0)
+set3.TextScaled = true
+set3.TextSize = 14
+set3.TextWrapped = true
+
+color.Name = "color"
+color.Parent = fcs
+color.BackgroundColor3 = Color3.new(0.454902, 0.647059, 1)
+color.BorderSizePixel = 2
+color.Position = UDim2.new(0, 0, 0.5517115, 0)
+color.Size = UDim2.new(0, 66, 0, 36)
+color.Text = "Cyan"
+color.TextColor3 = Color3.new(0, 0, 0)
+color.TextScaled = true
+color.TextSize = 14
+color.TextWrapped = true
+
+--// functions \\--
+
+onoff.MouseButton1Click:connect(function()
+	if onoff.Text == "On" then
+		local fc = true
+		onoff.Text = "Off"
+		if fc == true then 
+		
+		    local part = Instance.new("Part")
+		    part.Name = "fcb"
+		    part.Parent = workspace
+		    part.Size = Vector3.new(1,1,1)
+		    part.Position = game:GetService("Players").LocalPlayer.Character.Head.Position
+		    part.Anchored = true
+		    part.CanCollide = false
+		    part.BrickColor = BrickColor.random()
+		    part.Material = "Neon"
+		    part.Shape = "Ball"
+		    part.Transparency = 1
+		    part.Locked = true
+		
+		    if game:GetService("Workspace"):FindFirstChild("fcb") then 
+		
+		        game:GetService("Workspace").fcb.Transparency = 0
+		        game:GetService("Workspace").fcb.Anchored = false
+		        game:GetService("Players").LocalPlayer.Character.Head.Anchored = true
+		        game:GetService("Workspace").CurrentCamera.CameraSubject = game:GetService("Workspace").fcb
+		
+		        local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+		        local plr = game:GetService("Players").LocalPlayer
+		        local torso = game:GetService("Workspace").fcb
+		        local flying = true
+		        local deb = true
+		        local ctrl = {f = 0, b = 0, l = 0, r = 0}
+		        local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+		        local maxspeed = 35
+		        local speed = 35
+		
+		        function Fly()
+		
+		        local bv = Instance.new("BodyVelocity", torso)
+		        bv.velocity = Vector3.new(0,0,0)
+		        bv.maxForce = Vector3.new(math.huge, math.huge, math.huge)
+		        repeat wait()
+		
+		        if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+		            speed = speed+35+(speed/maxspeed)
+		            if speed > maxspeed then
+		                speed = maxspeed
+		            end
+		            elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+		                speed = speed-35
+		                if speed < 0 then
+		                    speed = 0
+		                end
+		            end
+		
+		            if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+		                bv.velocity = ((game:GetService("Workspace").CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game:GetService("Workspace").CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game:GetService("Workspace").CurrentCamera.CoordinateFrame.p))*speed
+		                lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+		                elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+		                bv.velocity = ((game:GetService("Workspace").CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game:GetService("Workspace").CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game:GetService("Workspace").CurrentCamera.CoordinateFrame.p))*speed
+		                else
+		                bv.velocity = Vector3.new(0,0,0)
+		            end
+		
+		            until not flying
+		            ctrl = {f = 0, b = 0, l = 0, r = 0}
+		            lastctrl = {f = 0, b = 0, l = 0, r = 0}
+		            speed = 0
+		            bv:Destroy()
+		        end
+		
+		        mouse.KeyDown:connect(function(key)
+		            if key:lower() == "e" then
+                        if game:GetService("Workspace"):FindFirstChild("fcb").Transparency == 0 then
+                            game:GetService("Players").LocalPlayer.Character.Head.Anchored = false
+                            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):FindFirstChild("fcb").CFrame
+                            game:GetService("Players").LocalPlayer.Character.Head.Anchored = true
+                        end
+		                elseif key:lower() == "w" then
+		                ctrl.f = 1
+		                elseif key:lower() == "s" then
+		                ctrl.b = -1
+		                elseif key:lower() == "a" then
+		                ctrl.l = -1
+		                elseif key:lower() == "d" then
+		                ctrl.r = 1
+		            end
+		        end)
+		
+		        mouse.KeyUp:connect(function(key)
+		            if key:lower() == "w" then
+		                ctrl.f = 0
+		                elseif key:lower() == "s" then
+		                ctrl.b = 0
+		                elseif key:lower() == "a" then
+		                ctrl.l = 0
+		                elseif key:lower() == "d" then
+		                ctrl.r = 0
+		            end
+		        end)
+		        Fly()
+		        else
+		    end
+		end
+	end
+    if onoff.Text == "Off" then
+        fc = false
+        onoff.Text = "On"
+        if fc == false and game:GetService("Workspace"):FindFirstChild("fcb") then
+            game:GetService("Players").LocalPlayer.Character.Head.Anchored = false
+            game:GetService("Workspace"):FindFirstChild("fcb").Anchored = true
+            game:GetService("Workspace"):FindFirstChild("fcb").Transparency = 1
+            game:GetService("Workspace").CurrentCamera.CameraSubject = game:GetService("Players").LocalPlayer.Character.Humanoid
+        end
+    end
+end)
+
+set1.MouseButton1Click:connect(function()
+    if game:GetService("Workspace"):FindFirstChild("fcb") then
+	    game:GetService("Workspace"):FindFirstChild("fcb").Material = mat.Text
+        else
+        warn("turn on freecam first")
+    end
+end)
+
+set2.MouseButton1Click:connect(function()
+    if game:GetService("Workspace"):FindFirstChild("fcb") then
+        game:GetService("Workspace"):FindFirstChild("fcb").Transparency = trans.Text
+        else
+        warn("turn on freecam first")
+    end
+end)
+
+set3.MouseButton1Click:connect(function()
+    if game:GetService("Workspace"):FindFirstChild("fcb") then
+        game:GetService("Workspace"):FindFirstChild("fcb").BrickColor = BrickColor.new(color.Text)
+        else
+        warn("turn on freecam first")
+    end
+end)
+
+set4.MouseButton1Click:connect(function()
+    if game:GetService("Workspace"):FindFirstChild("fcb") then
+        game:GetService("Workspace"):FindFirstChild("fcb").Shape = shape.Text
+        else
+        warn("turn on freecam first")
+    end
+end)
