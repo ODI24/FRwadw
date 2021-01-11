@@ -65,7 +65,7 @@ cred.BackgroundColor3 = Color3.new(1, 1, 1)
 cred.BackgroundTransparency = 1
 cred.Position = UDim2.new(0.405463755, 0, -0.030339051, 0)
 cred.Size = UDim2.new(0, 40, 0, 20)
-cred.Text = "FreeCam By ItzDan#6276"
+cred.Text = "FREE CAM"
 cred.TextColor3 = Color3.new(0, 0, 0)
 cred.TextSize = 12
 
